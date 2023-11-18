@@ -106,6 +106,27 @@ public class CarController {
 		}
 	}
 	
+	@PostMapping("/cars")
+	public ResponseEntity<CarServiceModel> createCar(
+		@RequestBody CarPutRequest carPostRequest
+	) {
+		Car car = new Car(carPostRequest.getCarRegistration(), carPostRequest.getModel(), carPostRequest.getColor());
+		try {
+			car = carRepository.save(car);
+			
+			CarServiceModel response = new CarServiceModel(
+				car.getId(),
+				car.getCarRegistration(),
+				car.getModel(),
+				car.getColor()
+			);
+			
+			return new ResponseEntity<CarServiceModel>(response, HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<CarServiceModel>(HttpStatus.CONFLICT);
+		}
+	}
+	
 	
 	@GetMapping("/cars/{carId}/reparations")
 	public ResponseEntity<List<ReparationServiceModel>> getCarReparations(

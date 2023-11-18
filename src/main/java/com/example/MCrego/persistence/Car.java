@@ -42,6 +42,13 @@ public class Car {
 		this.color = color;
 	}
 	
+	public Car(String carRegistration, String model, String color) {
+		super();
+		this.carRegistration = carRegistration;
+		this.model = model;
+		this.color = color;
+	}
+	
 	public Car(Integer id, String carRegistration, String model, String color, List<Reparation> reparationList) {
 		super();
 		this.id = id;
