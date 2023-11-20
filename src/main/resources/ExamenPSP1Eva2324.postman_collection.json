@@ -1,0 +1,296 @@
+{
+	"info": {
+		"_postman_id": "6f8f8a2c-1fee-4ca5-83c5-6e8665724ce8",
+		"name": "ExamenPSP1Eva2324",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31123305"
+	},
+	"item": [
+		{
+			"name": "Coches",
+			"item": [
+				{
+					"name": "cars",
+					"item": [
+						{
+							"name": "mas",
+							"item": [
+								{
+									"name": "/api/cars/{id} (duplicated)",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"carRegistration\": \"1234-ABC\",\r\n    \"model\": \"Fordd Focuss\",\r\n    \"color\": \"redd\"\r\n}"
+										},
+										"url": {
+											"raw": "{{API_URI}}/cars/2",
+											"host": [
+												"{{API_URI}}"
+											],
+											"path": [
+												"cars",
+												"2"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/api/cars/{id} (duplicated)",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"carRegistration\": \"1234-ABC\",\r\n    \"model\": \"Fordd Focuss\",\r\n    \"color\": \"redd\"\r\n}"
+										},
+										"url": {
+											"raw": "{{API_URI}}/cars",
+											"host": [
+												"{{API_URI}}"
+											],
+											"path": [
+												"cars"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/api/cars/{id} (car not found)",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"carRegistration\": \"9234-ABC\",\r\n    \"model\": \"Fordd Focuss\",\r\n    \"color\": \"redd\"\r\n}"
+										},
+										"url": {
+											"raw": "{{API_URI}}/cars/12",
+											"host": [
+												"{{API_URI}}"
+											],
+											"path": [
+												"cars",
+												"12"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "/api/cars",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URI}}/cars",
+									"host": [
+										"{{API_URI}}"
+									],
+									"path": [
+										"cars"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/cars/{id}",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URI}}/cars/2",
+									"host": [
+										"{{API_URI}}"
+									],
+									"path": [
+										"cars",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/cars/{id}",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"carRegistration\": \"9234-ABC\",\r\n    \"model\": \"Fordd Focuss\",\r\n    \"color\": \"redd\"\r\n}"
+								},
+								"url": {
+									"raw": "{{API_URI}}/cars",
+									"host": [
+										"{{API_URI}}"
+									],
+									"path": [
+										"cars"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/cars/{id}",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"carRegistration\": \"9235-ABC\",\r\n    \"model\": \"Fordd Focuss\",\r\n    \"color\": \"redd\"\r\n}"
+								},
+								"url": {
+									"raw": "{{API_URI}}/cars/2",
+									"host": [
+										"{{API_URI}}"
+									],
+									"path": [
+										"cars",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "reparations",
+					"item": [
+						{
+							"name": "/api/cars/{carId}/reparations",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URI}}/cars/1/reparations",
+									"host": [
+										"{{API_URI}}"
+									],
+									"path": [
+										"cars",
+										"1",
+										"reparations"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/cars/{carId}/reparations",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"reparationDate\": \"2022-01-01T23:00:00.000+00:00\",\r\n    \"price\": 29\r\n}"
+								},
+								"url": {
+									"raw": "{{API_URI}}/cars/1/reparations",
+									"host": [
+										"{{API_URI}}"
+									],
+									"path": [
+										"cars",
+										"1",
+										"reparations"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/cars/reparations/{id}",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{API_URI}}/reparations/1",
+									"host": [
+										"{{API_URI}}"
+									],
+									"path": [
+										"reparations",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_URI",
+			"value": "http://localhost:8080/api",
+			"type": "default"
+		}
+	]
+}

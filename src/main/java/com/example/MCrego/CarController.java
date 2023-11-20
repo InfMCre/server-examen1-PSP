@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -181,16 +182,17 @@ public class CarController {
 		);
 		return new ResponseEntity<ReparationServiceModel>(response, HttpStatus.CREATED);
 	}
-	
 
 	@DeleteMapping("/reparations/{id}")
 	public ResponseEntity<?> deleteReparation(
 		@PathVariable("id") Integer reparationId
 	) {
-		reparationRepository.deleteById(reparationId);
-		return new ResponseEntity<CarServiceModel>(HttpStatus.NO_CONTENT);
+		try {
+			reparationRepository.deleteById(reparationId);
+			return new ResponseEntity<CarServiceModel>(HttpStatus.NO_CONTENT);
+		} catch (EmptyResultDataAccessException e) {
+			return new ResponseEntity<CarServiceModel>(HttpStatus.NO_CONTENT);
+		}
 	}
-	
-	
 	
 }
